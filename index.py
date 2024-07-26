@@ -26,7 +26,7 @@ class WebScraping:
         'information': {
           'name': player_name,
           'age': age,
-          'height': height.replace("'", '.').replace('"', ''), # dividir por 2.85 para converter a metros
+          'height': height,
           'weight': weight,
           'position': position,
           'team': team,
