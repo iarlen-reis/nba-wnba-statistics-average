@@ -59,7 +59,12 @@ class WebScraping:
   def get_player_weight(self, soup):
     player_info = soup.find('div', {'class': 'p-card__meta-data has-height-restricted'}).find_all('div')
 
-    weight = player_info[1].find('b').text
+    if len(player_info[1].find('b').text) > 3:
+      weight = None
+    else:
+      weight = player_info[1].find('b').text
+
+    
 
     return weight
 
@@ -80,7 +85,10 @@ class WebScraping:
   def get_player_team(self, soup):
     player_info = soup.find('div', {'class': 'p-card__player-info'}).find_all('div')
 
-    team = player_info[1].find('a').text
+    if player_info[1].find('a') is not None:
+      team = player_info[1].find('a').text
+    else:
+      team = player_info[1].find('b').text
 
     return team
 
@@ -105,7 +113,7 @@ class WebScraping:
 
 # Adicione as urls de jogadores que deseja scrapear aqui
 urls = [
-  'https://www.rotowire.com/basketball/player/nikola-jokic-3612',
+  'https://www.rotowire.com/wnba/player/aja-wilson-481',
 ]
 
 player = WebScraping(urls)
