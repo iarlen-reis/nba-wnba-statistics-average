@@ -1,6 +1,6 @@
-Rotowire wnba scraper (Players)
+Rotowire NBA & WNBA scraper (Players)
 
-Essse é um script de scraping de dados de jogadoras de WNBA no site Rotowire. Para usar esse script, basta criar uma lista de urls de jogadoras que você deseja scrapear e passar para o script.
+Essse é um script de scraping de dados de jogadoras de basquete no site Rotowire. Para usar esse script, basta criar uma lista de urls de jogadoras que você deseja scrapear e passar para o script.
 
 ## Como executar o script
 
@@ -15,7 +15,15 @@ python3 index.py
 ```json
 [
   {
-    "name": "Aja Wilson",
+    "information": {
+      "name": "A'ja Wilson",
+      "age": "27",
+      "height": "6'4\"",
+      "weight": null,
+      "position": "Center",
+      "team": "Las Vegas Aces",
+      "league": "WNBA"
+    },
     "stats": [
       {
         "name": "PTS",
